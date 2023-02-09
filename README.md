@@ -8,17 +8,17 @@ To install this tool, download/clone the precompiled binary `efm8load.exe` locat
 ```
  UART-to-USB               EFM8 Device
 +-----------+             +------------+
-|       RTS | ----------> | C2K        |
+|        RTS| ----------> |RTS(C2K)    |
 |           |             |            |
-|       DTR | ----------> | C2D        |
+|        DTR| ----------> |DTR(C2D)    |
 |           |             |            |
-|       RXD | <---------- | TXD(P0.4)  |
+|        RXD| <---------- |TXD(P0.4)   |
 |           |             |            |
-|       TXD | ----------> | RXD(P0.5)  |
+|        TXD| ----------> |RXD(P0.5)   |
 |           |             |            |
-|       GND | ----------- | GND        |
+|        GND| ----------> |GND         |
 |           |             |            |
-|       3V3 | ----------- | 3V3        |
+|        3V3| ----------> |3V3         |
 +-----------+             +------------+
 ```
 
