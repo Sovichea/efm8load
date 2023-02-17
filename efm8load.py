@@ -344,9 +344,6 @@ class EFM8Loader:
         self.write_pages_ih(ih)
         self.verify_pages_ih(ih)
 
-        #reset device
-        self.send_reset()
-
     def erase_pages_ih(self, ih):
         """ erase all pages that are occupied """
         last_address = ih.addresses()[-1]
@@ -487,10 +484,13 @@ if __name__ == "__main__":
     cmd_valid = True
     if (args.identify):
         efm8loader.identify_chip()
+        efm8loader.send_reset()
     elif (args.write):
         efm8loader.upload(args.write)
+        efm8loader.send_reset()
     elif (args.read):
         efm8loader.download(args.read)
+        efm8loader.send_reset()
     elif (args.reset):
         efm8loader.send_reset()
     else:
